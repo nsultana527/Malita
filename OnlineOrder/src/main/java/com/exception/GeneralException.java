@@ -28,15 +28,4 @@ public class GeneralException extends RuntimeException {
     }
 	
 	
-	@ExceptionHandler(IllegalArgumentException.class)
-	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	@ResponseBody
-	public String validationException(IllegalArgumentException ex) {
-		 Map<String, String> errors = new HashMap<>();
-	     System.out.println( ex.getCause());
-	     System.out.println(ex.getMessage());
-	     System.out.println(ex.getClass());
-	     System.out.println(ex.getLocalizedMessage());
-	        return "errors";
-	}
 }
